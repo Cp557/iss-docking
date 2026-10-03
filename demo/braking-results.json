@@ -1,0 +1,234 @@
+{
+  "mode": "guarded_braking",
+  "seed_start": 15,
+  "seed_end": 34,
+  "trials": 20,
+  "successes": 20,
+  "reason_counts": {
+    "jev_wait": 161,
+    "deadline_reserve": 14,
+    "jev": 20
+  },
+  "cases": [
+    {
+      "seed": 15,
+      "outcome": "SUCCESS",
+      "jev_calls": 13,
+      "switch_frame": 375,
+      "switch_distance_m": 2.551,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.84,
+      "estimated_arrival_frame": 1254,
+      "dock_frame": 1268
+    },
+    {
+      "seed": 16,
+      "outcome": "SUCCESS",
+      "jev_calls": 8,
+      "switch_frame": 219,
+      "switch_distance_m": 3.2561,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.83,
+      "estimated_arrival_frame": 1380,
+      "dock_frame": 1411
+    },
+    {
+      "seed": 17,
+      "outcome": "SUCCESS",
+      "jev_calls": 10,
+      "switch_frame": 282,
+      "switch_distance_m": 2.6379,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.78,
+      "estimated_arrival_frame": 1196,
+      "dock_frame": 1207
+    },
+    {
+      "seed": 18,
+      "outcome": "SUCCESS",
+      "jev_calls": 7,
+      "switch_frame": 188,
+      "switch_distance_m": 3.1551,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.82,
+      "estimated_arrival_frame": 1309,
+      "dock_frame": 1339
+    },
+    {
+      "seed": 19,
+      "outcome": "SUCCESS",
+      "jev_calls": 11,
+      "switch_frame": 312,
+      "switch_distance_m": 2.6585,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.82,
+      "estimated_arrival_frame": 1234,
+      "dock_frame": 1257
+    },
+    {
+      "seed": 20,
+      "outcome": "SUCCESS",
+      "jev_calls": 12,
+      "switch_frame": 343,
+      "switch_distance_m": 2.9526,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.79,
+      "estimated_arrival_frame": 1383,
+      "dock_frame": 1405
+    },
+    {
+      "seed": 21,
+      "outcome": "SUCCESS",
+      "jev_calls": 7,
+      "switch_frame": 188,
+      "switch_distance_m": 3.0898,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.79,
+      "estimated_arrival_frame": 1283,
+      "dock_frame": 1305
+    },
+    {
+      "seed": 22,
+      "outcome": "SUCCESS",
+      "jev_calls": 13,
+      "switch_frame": 375,
+      "switch_distance_m": 2.5228,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.83,
+      "estimated_arrival_frame": 1243,
+      "dock_frame": 1291
+    },
+    {
+      "seed": 23,
+      "outcome": "SUCCESS",
+      "jev_calls": 13,
+      "switch_frame": 375,
+      "switch_distance_m": 2.3895,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.82,
+      "estimated_arrival_frame": 1190,
+      "dock_frame": 1203
+    },
+    {
+      "seed": 24,
+      "outcome": "SUCCESS",
+      "jev_calls": 11,
+      "switch_frame": 312,
+      "switch_distance_m": 2.7994,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.81,
+      "estimated_arrival_frame": 1291,
+      "dock_frame": 1332
+    },
+    {
+      "seed": 25,
+      "outcome": "SUCCESS",
+      "jev_calls": 9,
+      "switch_frame": 250,
+      "switch_distance_m": 2.6979,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.82,
+      "estimated_arrival_frame": 1188,
+      "dock_frame": 1200
+    },
+    {
+      "seed": 26,
+      "outcome": "SUCCESS",
+      "jev_calls": 11,
+      "switch_frame": 313,
+      "switch_distance_m": 2.9192,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.81,
+      "estimated_arrival_frame": 1339,
+      "dock_frame": 1388
+    },
+    {
+      "seed": 27,
+      "outcome": "SUCCESS",
+      "jev_calls": 11,
+      "switch_frame": 312,
+      "switch_distance_m": 2.544,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.83,
+      "estimated_arrival_frame": 1188,
+      "dock_frame": 1202
+    },
+    {
+      "seed": 28,
+      "outcome": "SUCCESS",
+      "jev_calls": 7,
+      "switch_frame": 188,
+      "switch_distance_m": 2.8818,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.84,
+      "estimated_arrival_frame": 1199,
+      "dock_frame": 1221
+    },
+    {
+      "seed": 29,
+      "outcome": "SUCCESS",
+      "jev_calls": 10,
+      "switch_frame": 281,
+      "switch_distance_m": 2.7625,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.85,
+      "estimated_arrival_frame": 1245,
+      "dock_frame": 1259
+    },
+    {
+      "seed": 30,
+      "outcome": "SUCCESS",
+      "jev_calls": 10,
+      "switch_frame": 281,
+      "switch_distance_m": 2.7263,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.83,
+      "estimated_arrival_frame": 1230,
+      "dock_frame": 1274
+    },
+    {
+      "seed": 31,
+      "outcome": "SUCCESS",
+      "jev_calls": 6,
+      "switch_frame": 156,
+      "switch_distance_m": 3.1191,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.8,
+      "estimated_arrival_frame": 1262,
+      "dock_frame": 1292
+    },
+    {
+      "seed": 32,
+      "outcome": "SUCCESS",
+      "jev_calls": 6,
+      "switch_frame": 156,
+      "switch_distance_m": 3.3797,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.81,
+      "estimated_arrival_frame": 1367,
+      "dock_frame": 1402
+    },
+    {
+      "seed": 33,
+      "outcome": "SUCCESS",
+      "jev_calls": 10,
+      "switch_frame": 281,
+      "switch_distance_m": 2.8513,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.79,
+      "estimated_arrival_frame": 1280,
+      "dock_frame": 1295
+    },
+    {
+      "seed": 34,
+      "outcome": "SUCCESS",
+      "jev_calls": 10,
+      "switch_frame": 281,
+      "switch_distance_m": 2.6857,
+      "switch_reason": "jev",
+      "jev_yes_probability": 0.79,
+      "estimated_arrival_frame": 1214,
+      "dock_frame": 1226
+    }
+  ]
+}

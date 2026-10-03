@@ -1,0 +1,78 @@
+{
+  "mode": "full_distance_jev_phases_plus_guarded_braking",
+  "seed_start": 5,
+  "seed_end": 9,
+  "trials": 5,
+  "successes": 5,
+  "braking_reason_counts": {
+    "jev_wait": 40,
+    "jev": 5
+  },
+  "cases": [
+    {
+      "seed": 5,
+      "outcome": "SUCCESS",
+      "initial_range_m": 202.28,
+      "phase_decisions": 146,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2563,
+      "braking_switch_frame": 2813,
+      "braking_switch_distance_m": 3.2167,
+      "braking_switch_reason": "jev",
+      "dock_frame": 3957
+    },
+    {
+      "seed": 6,
+      "outcome": "SUCCESS",
+      "initial_range_m": 223.97,
+      "phase_decisions": 154,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2813,
+      "braking_switch_frame": 3063,
+      "braking_switch_distance_m": 3.2206,
+      "braking_switch_reason": "jev",
+      "dock_frame": 4208
+    },
+    {
+      "seed": 7,
+      "outcome": "SUCCESS",
+      "initial_range_m": 163.7,
+      "phase_decisions": 142,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2438,
+      "braking_switch_frame": 2688,
+      "braking_switch_distance_m": 3.2202,
+      "braking_switch_reason": "jev",
+      "dock_frame": 3833
+    },
+    {
+      "seed": 8,
+      "outcome": "SUCCESS",
+      "initial_range_m": 153.67,
+      "phase_decisions": 146,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2562,
+      "braking_switch_frame": 2812,
+      "braking_switch_distance_m": 3.2159,
+      "braking_switch_reason": "jev",
+      "dock_frame": 3955
+    },
+    {
+      "seed": 9,
+      "outcome": "SUCCESS",
+      "initial_range_m": 181.65,
+      "phase_decisions": 148,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2625,
+      "braking_switch_frame": 2875,
+      "braking_switch_distance_m": 3.2186,
+      "braking_switch_reason": "jev",
+      "dock_frame": 4019
+    }
+  ]
+}
