@@ -2,7 +2,7 @@
 
 ## Demo
 
-[Watch the 33-second docking demo](demo/docking.mp4)
+https://github.com/user-attachments/assets/6b166d04-fc82-42e9-b7e2-10534b57161d
 
 [Download the MP4](demo/docking.mp4) · [Technical reference](REFERENCE.md)
 
