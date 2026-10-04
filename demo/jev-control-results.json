@@ -1,0 +1,99 @@
+{
+  "experiment": "jev_control_limits",
+  "phase_runs": 3,
+  "phase_dockings": 3,
+  "phase_deadlines_met": 0,
+  "velocity_runs": 3,
+  "velocity_dockings": 0,
+  "runs": [
+    {
+      "mode": "phase",
+      "start": "default",
+      "outcome": "SUCCESS",
+      "jev_decisions": 206,
+      "last_frame": 5803,
+      "initial_range_m": 202.59,
+      "brake_frame": 2906,
+      "brake_range_m": 7.6,
+      "brake_estimated_arrival_frame": 5803,
+      "capture_deadline_frame": 4375,
+      "deadline_met": false,
+      "readiness_vetoes": 0,
+      "final_lateral_m": 0.05
+    },
+    {
+      "mode": "phase",
+      "start": "seed_15",
+      "outcome": "SUCCESS",
+      "jev_decisions": 214,
+      "last_frame": 6084,
+      "initial_range_m": 247.63,
+      "brake_frame": 3188,
+      "brake_range_m": 7.6,
+      "brake_estimated_arrival_frame": 6087,
+      "capture_deadline_frame": 4657,
+      "deadline_met": false,
+      "readiness_vetoes": 0,
+      "final_lateral_m": 0.05
+    },
+    {
+      "mode": "phase",
+      "start": "seed_16",
+      "outcome": "SUCCESS",
+      "jev_decisions": 173,
+      "last_frame": 4802,
+      "initial_range_m": 167.08,
+      "brake_frame": 1906,
+      "brake_range_m": 7.6,
+      "brake_estimated_arrival_frame": 4804,
+      "capture_deadline_frame": 3375,
+      "deadline_met": false,
+      "readiness_vetoes": 0,
+      "final_lateral_m": 0.05
+    },
+    {
+      "mode": "velocity",
+      "start": "default",
+      "outcome": "TIMEOUT",
+      "jev_decisions": 250,
+      "last_frame": 7813,
+      "initial_range_m": 202.59,
+      "final_range_m": 183.91,
+      "final_lateral_m": 24.46,
+      "approach_choice_counts": {
+        "stop": 1,
+        "creep": 249
+      }
+    },
+    {
+      "mode": "velocity_paced",
+      "start": "default",
+      "outcome": "FAIL",
+      "jev_decisions": 133,
+      "last_frame": 4139,
+      "initial_range_m": 202.59,
+      "final_range_m": 2.02,
+      "final_lateral_m": 0.79,
+      "approach_choice_counts": {
+        "fast": 1,
+        "medium": 127,
+        "creep": 1,
+        "slow": 4
+      },
+      "simulator_message": "You made contact with the International Space Station."
+    },
+    {
+      "mode": "velocity_instructed",
+      "start": "default",
+      "outcome": "TIMEOUT",
+      "jev_decisions": 250,
+      "last_frame": 7812,
+      "initial_range_m": 202.59,
+      "final_range_m": 199.49,
+      "final_lateral_m": 0.52,
+      "approach_choice_counts": {
+        "stop": 250
+      }
+    }
+  ]
+}

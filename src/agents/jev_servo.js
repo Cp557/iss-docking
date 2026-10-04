@@ -102,7 +102,8 @@
             let xTarget = 0;
             if (state.phase === "cruise") xTarget = cruiseRate(x - 8);
             if (state.phase === "capture" && x > 0) xTarget = state.captureApproachTarget;
-            const lateralLimit = state.phase === "capture" ? 0.0025 :
+            if (state.phase === "brake" && x > 0) xTarget = -0.0025;
+            const lateralLimit = state.phase === "capture" || state.phase === "brake" ? 0.0025 :
                 (state.phase === "lineup" || state.phase === "cruise" ? 0.04 : 0);
             worldTarget = new THREE.Vector3(
                 positionRate(y, lateralLimit),

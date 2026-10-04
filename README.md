@@ -15,6 +15,8 @@ This is a replay of a successful docking from the simulator's normal start. It s
 
 Jev made the high-level choices; the controller stabilized the craft and a safety guard checked braking. These are small simulator trials. The full-distance controller brings different starts to similar final-approach states.
 
+In separate control-limit trials, Jev chose braking as a phase and docked on 3/3 starts, but missed the arrival deadline each time. Jev-chosen three-axis velocity targets docked on 0/3 trials with different prompts on the same start. [Control-limit results](demo/jev-control-results.json)
+
 [Full-docking results](demo/full-distance-results.json) · [Braking results](demo/braking-results.json) · [Technical reference](REFERENCE.md)
 
 ## Run it

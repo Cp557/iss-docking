@@ -53,12 +53,21 @@ The isolated near-port test is `scripts/evaluate_braking.py`. It uses the same a
 
 The full-distance controller converges different starts to nearly identical 8 m capture states. The twenty near-port runs test a wider range of braking states, but begin aligned and at rest. These samples measure the browser simulator only. Jev does not infer physics from images or choose every thruster pulse.
 
+## Jev control-limit experiments
+
+`scripts/experiment_jev_control.py` runs separately from the guarded demo and writes full traces to ignored `results/` files. Its `phase` mode makes **brake** a Jev-selected phase instead of asking a second braking question. The existing readiness gates still protect phase transitions, but no automatic braking override changes Jev's choice. The actuator targets −0.02 m/frame during capture and −0.0025 m/frame during brake.
+
+The `velocity`, `velocity_paced`, and `velocity_instructed` modes ask Jev for approach and two lateral velocity targets in a single API request. The actuator still settles attitude and tracks those velocity targets with frame-level pulses; there is no scripted phase trajectory, readiness veto, or braking override. `velocity_paced` adds a frame-5,000 goal and travel-time estimates. `velocity_instructed` also states alignment and braking rules in the prompt and supplies braking room. These modes test structured-state decisions, not image perception or raw thruster selection.
+
+On the default start and unused seeds 15–16, brake-as-phase docked 3/3, but Jev switched near 7.6 m every time and missed the capture deadline by about 1,427–1,428 frames. On the default start, unpaced velocity control timed out after 250 decisions, paced control collided near the port with about 0.79 m of lateral error, and instructed control timed out after 250 decisions without starting the long approach. The three velocity trials are different prompts on one start, so they do not establish a general success rate. Summary: `demo/jev-control-results.json`.
+
 ## Current files
 
 ```text
 README.md                      Overview and commands
 REFERENCE.md                   This technical reference
 scripts/dock.py                Full Jev-guided docking run
+scripts/experiment_jev_control.py  Separate phase and velocity experiments
 scripts/evaluate_braking.py    Isolated guarded braking run
 scripts/replay.py              Exact action replay
 scripts/render_demo.py         Demo video renderer
