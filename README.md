@@ -1,8 +1,10 @@
 # Jev-Guided ISS Docking
 
-[![Docking approach](demo/cover.png)](demo/docking.mp4)
+## Demo
 
-**[Watch the 33-second demo](demo/docking.mp4)** · [Technical reference](REFERENCE.md)
+https://github.com/user-attachments/assets/6b166d04-fc82-42e9-b7e2-10534b57161d
+
+[Download the MP4](demo/docking.mp4) · [Technical reference](REFERENCE.md)
 
 A Jev-guided controller for the [SpaceX ISS Docking Simulator](https://iss-sim.spacex.com/). Jev reads simulator telemetry and chooses the flight phase and when to slow for docking. A frame-level controller turns those choices into thruster pulses. Playwright pauses the simulator while Jev responds, so API latency does not move the craft.
 
