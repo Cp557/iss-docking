@@ -4,7 +4,7 @@ Jev guides a spacecraft through the [SpaceX ISS Docking Simulator](https://iss-s
 
 ## Demo
 
-https://github.com/user-attachments/assets/0d257062-8974-40f1-ab3f-77e8f9bae471
+https://github.com/user-attachments/assets/0dd30c47-2f6e-4baf-9e31-fd96615b9105
 
 This is a replay of a successful docking from the simulator's normal start. It shows 156 Jev phase decisions and nine braking judgments. [Download the MP4](demo/docking.mp4) · [View the recording](demo/recording.json)
 

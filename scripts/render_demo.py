@@ -28,41 +28,36 @@ OVERLAY = """() => {
         #dockingDemo { position: fixed; inset: 0; z-index: 2147483647;
             pointer-events: none; color: #f6fbff; font-family: Arial, sans-serif; }
         #dockingDemo .card { position: absolute; top: 24px; left: 24px;
-            width: 340px; padding: 18px 20px; border: 1px solid #72e1ff66;
-            border-radius: 14px; background: #07131edc;
+            width: 300px; padding: 12px 14px; border: 1px solid #72e1ff66;
+            border-radius: 10px; background: #07131edc;
             box-shadow: 0 14px 45px #0009; }
-        #dockingDemo .eyebrow { color: #75dfff; font-size: 11px;
-            font-weight: 700; letter-spacing: 2px; }
-        #dockingDemo .title { margin: 8px 0 16px; font-size: 28px;
-            font-weight: 800; letter-spacing: -.6px; line-height: 1.05; }
-        #dockingDemo .stats { display: flex; gap: 18px; }
-        #dockingDemo .label { color: #a7bdca; font-size: 10px;
-            letter-spacing: 1.4px; text-transform: uppercase; }
-        #dockingDemo .value { margin-top: 4px; font-size: 17px; font-weight: 700; }
+        #dockingDemo .title { margin: 0 0 10px; font-size: 18px;
+            font-weight: 800; line-height: 1; }
+        #dockingDemo .title span { margin-left: 8px; color: #75dfff;
+            font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+        #dockingDemo .stats { display: flex; gap: 16px; }
+        #dockingDemo .label { color: #a7bdca; font-size: 9px;
+            letter-spacing: 1px; text-transform: uppercase; }
+        #dockingDemo .value { margin-top: 2px; font-size: 14px; font-weight: 700; }
         #dockingDemo .phase { color: #75eec7; }
-        #dockingDemo .brake { margin-top: 13px; padding-top: 10px;
-            border-top: 1px solid #75dfff33; color: #a7bdca; font-size: 11px;
+        #dockingDemo .brake { margin-top: 8px; padding-top: 7px;
+            border-top: 1px solid #75dfff33; color: #a7bdca; font-size: 9px;
             letter-spacing: .7px; }
-        #dockingDemo .brake strong { margin-left: 8px; color: #75eec7; }
-        #dockingDemo .footer { position: absolute; right: 22px; bottom: 18px;
-            padding: 8px 11px; border-radius: 8px; background: #07131ecc;
-            font-size: 11px; color: #d5e4ef; letter-spacing: .3px; }
+        #dockingDemo .brake strong { margin-left: 6px; color: #75eec7; }
     `;
     document.head.appendChild(style);
     const overlay = document.createElement('div');
     overlay.id = 'dockingDemo';
     overlay.innerHTML = `
         <div class="card">
-            <div class="eyebrow">JEV-GUIDED SPACECRAFT CONTROL</div>
-            <div class="title">ISS Docking</div>
+            <div class="title">ISS Docking<span>JEV GUIDANCE</span></div>
             <div class="stats">
                 <div><div class="label">Jev phase</div><div class="value phase" id="demoPhase">ALIGN</div></div>
                 <div><div class="label">Range</div><div class="value" id="demoRange">—</div></div>
                 <div><div class="label">Decision</div><div class="value" id="demoDecision">1</div></div>
             </div>
-            <div class="brake" id="demoBrakeRow">JEV BRAKING<strong id="demoBrake">PENDING</strong></div>
+            <div class="brake" id="demoBrakeRow">BRAKING<strong id="demoBrake">PENDING</strong></div>
         </div>
-        <div class="footer" id="demoFooter">Recorded JEV decisions · deterministic simulator replay</div>
     `;
     document.body.appendChild(overlay);
 }"""
@@ -110,15 +105,13 @@ def update_overlay(page, frame: int, decisions: list[dict]) -> None:
             document.querySelector('#demoDecision').textContent = data.decision;
             document.querySelector('#demoBrake').textContent = data.braking;
             document.querySelector('#demoBrakeRow').style.display = data.showBraking ? '' : 'none';
-            document.querySelector('#demoFooter').textContent = data.footer;
         }""",
         {
             "phase": decisions[latest]["applied_phase"].upper(),
             "range": f"{state['range_m']:.1f} m",
             "decision": str(latest + 1),
             "braking": braking_status,
-            "showBraking": any("braking" in decision for decision in decisions),
-            "footer": "Recorded JEV decisions · deterministic simulator replay",
+            "showBraking": bool(braking_choices),
         },
     )
 
