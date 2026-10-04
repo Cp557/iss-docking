@@ -43,12 +43,12 @@ The isolated near-port test is `scripts/evaluate_braking.py`. It uses the same a
 
 `src/recording.py` saves the scenario, Jev decisions, frame-indexed control actions, simulator result, and final state. Live runs write to ignored `results/` files. The included successful default-start run is `demo/recording.json`.
 
-`scripts/replay.py` applies the saved actions at their original frame numbers. It verifies the simulator's declared outcome and compares the game-over telemetry against the recording, allowing at most 0.001 numeric difference. It needs simulator access but no Jev key. `scripts/render_demo.py` samples this replay from frame 0, adds a labeled decision panel, checks the same game-over match, and encodes `demo/docking.mp4` with `ffmpeg`. The panel is a video overlay, not a simulator control.
+`scripts/replay.py` applies the saved actions at their original frame numbers. It verifies the simulator's declared outcome and compares the game-over telemetry against the recording, allowing at most 0.001 numeric difference. It needs simulator access but no Jev key. `scripts/render_demo.py` samples this replay from frame 0, adds a labeled decision panel, checks the same game-over match, then captures the simulator's success transition and holds its success screen at the end of `demo/docking.mp4`. The panel is a video overlay, not a simulator control.
 
 ## Evidence and limits
 
 - The default-start demo run docked at frame 4,269 after 156 Jev phase decisions and nine braking judgments. Jev selected the braking switch at frame 3,125. Its packaged action replay matched the recorded game-over state exactly.
-- Five previously unused full-distance seeds, 5–9, docked 5/5. True starting ranges were 153.67–223.97 m. Jev made 142–154 phase decisions and nine braking judgments per run. It selected all accepted braking switches near 3.22 m; no guard overrides were needed. Summary: `demo/full-distance-results.json`.
+- Ten full-distance seeds, 5–14, docked 10/10. True starting ranges were 134.75–223.97 m. Jev made 131–154 phase decisions and nine braking judgments per run. It selected all accepted braking switches near 3.22 m; no readiness vetoes or braking-guard overrides were needed. Seeds 10–14 were run after the first five were reported. Summary: `demo/full-distance-results.json`.
 - Twenty previously unused near-port seeds, 15–34, docked 20/20. Jev made each accepted switch; the deadline reserve deferred 14 earlier proposals. Summary: `demo/braking-results.json`.
 
 The full-distance controller converges different starts to nearly identical 8 m capture states. The twenty near-port runs test a wider range of braking states, but begin aligned and at rest. These samples measure the browser simulator only. Jev does not infer physics from images or choose every thruster pulse.

@@ -20,6 +20,8 @@ DEFAULT_TRACE = ROOT / "demo/recording.json"
 DEFAULT_OUTPUT = ROOT / "demo"
 START_FRAME = 0
 PREVIEW_FRAMES = (START_FRAME, 180, 530, 1590, 2300, 2400, 3000, 3300)
+SUCCESS_TRANSITION_MS = 4000
+SUCCESS_FRAME_INTERVAL_MS = 250
 OVERLAY = """() => {
     const style = document.createElement('style');
     style.textContent = `
@@ -87,7 +89,7 @@ def advance_to_frame(page, target: int) -> int:
         page.clock.run_for(1000 if remaining > 65 else (100 if remaining > 7 else 17))
 
 
-def update_overlay(page, frame: int, decisions: list[dict], show_success: bool) -> None:
+def update_overlay(page, frame: int, decisions: list[dict]) -> None:
     latest = next(
         (index for index in range(len(decisions) - 1, -1, -1)
          if decisions[index]["frame"] <= frame),
@@ -111,15 +113,12 @@ def update_overlay(page, frame: int, decisions: list[dict], show_success: bool) 
             document.querySelector('#demoFooter').textContent = data.footer;
         }""",
         {
-            "phase": "DOCKED" if show_success else decisions[latest]["applied_phase"].upper(),
+            "phase": decisions[latest]["applied_phase"].upper(),
             "range": f"{state['range_m']:.1f} m",
             "decision": str(latest + 1),
             "braking": braking_status,
             "showBraking": any("braking" in decision for decision in decisions),
-            "footer": (
-                "Simulator result: SUCCESS · recorded JEV decisions"
-                if show_success else "Recorded JEV decisions · deterministic simulator replay"
-            ),
+            "footer": "Recorded JEV decisions · deterministic simulator replay",
         },
     )
 
@@ -156,9 +155,7 @@ def render(trace_path: Path, output: Path, preview: bool, fps: int, stride: int)
 
             for index, target in enumerate(targets):
                 frame = advance_to_frame(page, target)
-                update_overlay(
-                    page, frame, data["decisions"], show_success=index == len(targets) - 1
-                )
+                update_overlay(page, frame, data["decisions"])
                 page.evaluate("window.__demoDrawFrame()")
                 name = f"preview_{frame:04d}.png" if preview else f"frame_{index:04d}.png"
                 page.screenshot(path=str(output / name))
@@ -175,6 +172,21 @@ def render(trace_path: Path, output: Path, preview: bool, fps: int, stride: int)
                     or not math.isclose(difference, 0, abs_tol=1e-3)):
                 raise ValueError(f"Demo replay diverged from recorded success: {difference}")
             print(f"replay_match=True max_capture_difference={difference:.6f}", flush=True)
+
+            page.evaluate("document.querySelector('#dockingDemo').remove()")
+            transition_steps = range(0, SUCCESS_TRANSITION_MS + 1,
+                                     SUCCESS_FRAME_INTERVAL_MS)
+            for index, elapsed_ms in enumerate(transition_steps):
+                if index:
+                    page.clock.run_for(SUCCESS_FRAME_INTERVAL_MS)
+                page.evaluate("window.__demoDrawFrame()")
+                if not preview or elapsed_ms == SUCCESS_TRANSITION_MS:
+                    name = ("preview_success.png" if preview
+                            else f"frame_{len(targets) + index:04d}.png")
+                    page.screenshot(path=str(output / name))
+            if not page.get_by_text("SUCCESS", exact=True).is_visible():
+                raise ValueError("Simulator success screen did not appear")
+            print("success_screen_captured=True", flush=True)
         finally:
             browser.close()
 

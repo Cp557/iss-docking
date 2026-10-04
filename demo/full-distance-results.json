@@ -1,12 +1,12 @@
 {
   "mode": "full_distance_jev_phases_plus_guarded_braking",
   "seed_start": 5,
-  "seed_end": 9,
-  "trials": 5,
-  "successes": 5,
+  "seed_end": 14,
+  "trials": 10,
+  "successes": 10,
   "braking_reason_counts": {
-    "jev_wait": 40,
-    "jev": 5
+    "jev_wait": 80,
+    "jev": 10
   },
   "cases": [
     {
@@ -73,6 +73,71 @@
       "braking_switch_distance_m": 3.2186,
       "braking_switch_reason": "jev",
       "dock_frame": 4019
+    },
+    {
+      "seed": 10,
+      "outcome": "SUCCESS",
+      "initial_range_m": 194.39,
+      "phase_decisions": 134,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2188,
+      "braking_switch_frame": 2438,
+      "braking_switch_distance_m": 3.2147,
+      "braking_switch_reason": "jev",
+      "dock_frame": 3581
+    },
+    {
+      "seed": 11,
+      "outcome": "SUCCESS",
+      "initial_range_m": 180.65,
+      "phase_decisions": 140,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2375,
+      "braking_switch_frame": 2625,
+      "braking_switch_distance_m": 3.2175,
+      "braking_switch_reason": "jev",
+      "dock_frame": 3769
+    },
+    {
+      "seed": 12,
+      "outcome": "SUCCESS",
+      "initial_range_m": 182.21,
+      "phase_decisions": 138,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2312,
+      "braking_switch_frame": 2562,
+      "braking_switch_distance_m": 3.2198,
+      "braking_switch_reason": "jev",
+      "dock_frame": 3707
+    },
+    {
+      "seed": 13,
+      "outcome": "SUCCESS",
+      "initial_range_m": 154.47,
+      "phase_decisions": 132,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2125,
+      "braking_switch_frame": 2375,
+      "braking_switch_distance_m": 3.2201,
+      "braking_switch_reason": "jev",
+      "dock_frame": 3520
+    },
+    {
+      "seed": 14,
+      "outcome": "SUCCESS",
+      "initial_range_m": 134.75,
+      "phase_decisions": 131,
+      "braking_questions": 9,
+      "phase_vetoes": 0,
+      "capture_start_frame": 2094,
+      "braking_switch_frame": 2344,
+      "braking_switch_distance_m": 3.2202,
+      "braking_switch_reason": "jev",
+      "dock_frame": 3488
     }
   ]
 }

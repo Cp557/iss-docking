@@ -4,13 +4,13 @@ Jev guides a spacecraft through the [SpaceX ISS Docking Simulator](https://iss-s
 
 ## Demo
 
-https://github.com/user-attachments/assets/6b166d04-fc82-42e9-b7e2-10534b57161d
+https://github.com/user-attachments/assets/0d257062-8974-40f1-ab3f-77e8f9bae471
 
 This is a replay of a successful docking from the simulator's normal start. It shows 156 Jev phase decisions and nine braking judgments. [Download the MP4](demo/docking.mp4) · [View the recording](demo/recording.json)
 
 ## Results
 
-- **5/5 full dockings** from randomized starts 153–224 m away.
+- **10/10 full dockings** from randomized starts 135–224 m away.
 - **20/20 final approaches** from aligned starts 6–10 m away.
 
 Jev made the high-level choices; the controller stabilized the craft and a safety guard checked braking. These are small simulator trials. The full-distance controller brings different starts to similar final-approach states.
